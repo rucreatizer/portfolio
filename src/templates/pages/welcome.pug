@@ -1,0 +1,25 @@
+extends ../template_main
+
+block variables
+	- var title = 'Добро пожаловать'
+
+block content
+	div.wrapper
+		a.auth(href="#") Авторизоваться
+		div.welcome-wrapper
+			div.welcome-form
+				img.avatar(src="./assets/images/avatar.jpg")
+				div.my-name Мищенко Михаил
+				div.description Личный сайт веб разработчика
+				div.social-icons
+					img.social-icon(src="")
+					1
+					img.social-icon(src="")
+					2
+					img.social-icon(src="")
+					3
+				div.url__list
+					a.url__item(href="#") Мои работы
+					a.url__item(href="#") Обо мне
+					a.url__item(href="#") Блог
+		span.copyright © Мищенко Михаил | создано с любовью в LoftSchool | 2017
