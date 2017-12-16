@@ -7,11 +7,25 @@
 }
 
 .auth {
-	position: absolute;
-	display: block;
-	left: 100%;
-	top: 5%;
-	transform: translate(-200%,0);
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 14px 28px 17px 27px;
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    display: block;
+    left: 100%;
+    top: 5%;
+    transform: translate(-150%, 0);
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+        color: #00bfa5;
+    }
+}
+
+.hid {
+    display: none;
 }
 
 .welcome-wrapper {
@@ -20,29 +34,315 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .welcome-form {
     width: 380px;
-    background-color: rgba(white, .85);
+    background-color: rgba(white, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.avatar {
+    display: block;
+    border-radius: 50%;
+    margin-top: 40px;
+}
+
+.my-name {
+    font-size: 28px;
+    color: #455a64;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.description {
+    margin-bottom: 20px;
+    color: #66777f;
+    font-size: 16px;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social__item {
+    width: 31px;
+    height: 17px;
+    margin-right: 27px;
+    cursor: pointer;
+    &:nth-of-type(3) {
+        margin-right: 0px;
+    }
+}
+
+#vk>path {
+    fill: #70d1c6;
+    &:hover {
+        fill: #00bfa5;
+    }
+}
+
+#github>path {
+    fill: #70d1c6;
+    &:hover {
+        fill: #00bfa5;
+    }
+}
+
+#in>path {
+    fill: #70d1c6;
+    &:hover {
+        fill: #00bfa5;
+    }
+}
+
+.list-wrapper {}
+
+.url__list {
+    display: flex;
+    justify-content: center;
+    width: 380px;
+}
+
+.url__item {
+    background-color: rgba(#00bfa5, 0.85);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 15px 0px 18px 0px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    &:nth-of-type(1) {
+        width: 154px;
+        border-bottom-right-radius: 0px;
+    }
+    &:nth-of-type(2) {
+        width: 125px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    &:nth-of-type(3) {
+        width: 97px;
+        margin-right: 0;
+        border-bottom-left-radius: 0px;
+    }
+    &:hover {
+        background-color: rgba(#009688, 0.85);
+    }
+}
+
+.welcome__separator {
+    width: 2px;
+    background-color: rgba(#dee3e7, 0.7);
+}
+
+.copyright {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -300%);
+}
+
+.auth__block {
+    width: 380px;
+    background-color: rgba(white, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 33px 0 0 0;
+}
+
+.auth__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.avatar {
-    margin-top: 40px;
+.auth__title {
+    font-family: bernier;
+    text-transform: uppercase; //font-weight: bold;
+    font-size: 35px;
+    color: #455a64;
+    position: relative;
+    text-align: center;
+    margin-bottom: 41px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 22px;
+        height: 5px;
+        background-color: #c4cacc;
+        transform: translate(-42px, -50%);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 22px;
+        height: 5px;
+        background-color: #c4cacc;
+        transform: translate(20px, -50%);
+    }
 }
 
-.url__list {
-    display: flex;	
+.auth__login,
+.auth__pass {
+    display: block;
+    width: 340px;
+    padding-bottom: 20px;
 }
 
-.copyright {
-	position: absolute;
-	color: white;
-	left: 50%;
-	top: 100%;
-	transform: translate(-50%,-300%)
+.auth__login-img {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background-color: #f0efe9;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    float: left;
+    &>svg {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        fill: #c4cbcd;
+        width: 45px;
+    }
+}
+
+.auth__login-input,
+.auth__pass-input {
+    padding: 12.5px 0 12.5px 20px;
+    width: 290px;
+    border: transparent;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    &:after {
+        content: "";
+        float: none;
+    }
+}
+
+.auth__text {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.auth__people-input {
+    position: absolute;
+    left: -999999px;
+}
+
+.auth__people-input:checked+.auth__checkbox>svg {
+    width: 20px;
+    fill: white;
+}
+
+.auth__checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: #00bfa5;
+    border-radius: 2px;
+    margin-right: 11px;
+    cursor: pointer;
+    &>svg {
+        width: 10px;
+        height: 10px;
+        fill: transparent;
+    }
+}
+
+.auth__text-people {
+    color: #77848a;
+}
+
+.auth__text-people2 {
+    color: #77848a;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.auth__check,
+.auth__check2,
+.auth__robot-radio {
+    display: flex;
+}
+
+.auth__check {
+    margin-right: 40px;
+}
+
+.people__radio,
+.people__radio2 {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #d7d7d7;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.people__radio_checked,
+.people__radio2_checked {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #11c3ab;
+}
+
+#people_radio,
+#people_radio2 {
+    position: absolute;
+    left: -9999999px;
+}
+
+#people_radio:checked+.people__radio>.people__radio_checked {
+    width: 8px;
+    height: 8px;
+}
+
+#people_radio2:checked+.people__radio2>.people__radio2_checked {
+    width: 8px;
+    height: 8px;
+}
+
+.auth__robot-radio {
+    margin-bottom: 39px;
+}
+
+.auth__url {
+    display: block;
+    width: 50%;
+    &:nth-of-type(1) {
+        width: 50%;
+    }
+    &:nth-of-type(2) {
+        width: 50%;
+    }
+}
+
+input::-moz-placeholder {
+    color: #aeb0b1;
+}
+
+input::-webkit-input-placeholder {
+    color: #aeb0b1;
 }

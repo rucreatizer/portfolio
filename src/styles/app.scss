@@ -1,3 +1,17 @@
+body {
+    font-family: roboto;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@import 'common/fonts';
 @import 'common/normalize';
 @import 'common/menu';
 @import 'common/technologies';

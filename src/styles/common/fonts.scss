@@ -1,0 +1,17 @@
+@font-face {
+    font-family: roboto;
+    src: // url("./assets/fonts/Gagalin.otf"),
+    // 	 url("./assets/fonts/gagalin-webfont.eot"),
+    url("../fonts/Roboto-Regular.ttf") format("truetype");
+    //    url("./assets/fonts/gagalin-webfont.woff") format("woff"),
+    // url("./assets/fonts/gagalin-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: bernier;
+    src: url("../fonts/bernierregular-regular-webfont.ttf"), url("../fonts/bernierregular-regular-webfont.eot"), url("../fonts/bernierregular-regular-webfont.woff") format("woff"), url("../fonts/bernierregular-regular-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
