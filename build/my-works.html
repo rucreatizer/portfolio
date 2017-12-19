@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Мои работы</title>
+    <title>Обо мне</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -11,24 +11,147 @@
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Мои работы</h1>
-    <div class="container">
-      <ul id="slides">
-        <li class="slide showing"></li>
-        <li class="slide"></li>
-        <li class="slide"></li>
-      </ul>
-      <div class="buttons">
-        <button class="controls" id="previous">&lt;</button>
-        <button class="controls" id="next">&gt;</button>
+    <div class="wrapper wrapper__about">
+      <div class="section section__top">
+        <div class="wrapper-header">
+          <div class="header">
+            <div class="social__list">
+              <svg class="social__item social__item_about">
+                <use xlink:href="./assets/images/svg/symbols.svg#vk"></use>
+              </svg>
+              <svg class="social__item social__item_about">
+                <use xlink:href="./assets/images/svg/symbols.svg#github"></use>
+              </svg>
+              <svg class="social__item social__item_about">
+                <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
+              </svg>
+            </div>
+            <div class="menu"></div>
+          </div>
+        </div>
+        <div class="info"><img class="avatar" src="./assets/images/avatar.jpg">
+          <div class="my-name">Мищенко Михаил</div>
+          <div class="description">Личный сайт веб разработчика</div>
+        </div>
+        <div class="arrow-down">
+          <svg class="social__item">
+            <use xlink:href="./assets/images/svg/symbols.svg#arrow_down"></use>
+          </svg>
+        </div>
+        <div class="bg__title">
+          <svg class="bg__title-img">
+            <use xlink:href="./assets/images/svg/symbols.svg#portfolio_header"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="section">
+        <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
+          <polygon class="left3" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+          <polygon class="right3" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+        </svg>
+        <div class="section__works">
+          <div class="works__title"><span class="auth__title works__title">мои работы</span>
+            <svg class="bg__title-img works__title_img">
+              <use xlink:href="./assets/images/svg/symbols.svg#works_header"></use>
+            </svg>
+          </div>
+          <div class="works">
+            <div class="works__descriptions"><span class="auth__title works__title_description">сайт школы онлайн</span><span class="auth__title works__subtitle_description">образования</span><span class="works__tech_text">html, css, javascript</span>
+              <button class="works__button">
+                <svg class="works__button_img">
+                  <use xlink:href="./assets/images/svg/symbols.svg#link"></use>
+                </svg><span class="works__button_text">Посмотреть сайт</span>
+              </button>
+            </div>
+            <div class="works__portfolio">
+              <div class="works__image"> <img class="works__image_pic" src="./assets/images/works_image.png" alt=""></div>
+              <div class="works__arrows">
+                <div class="arrow__down" style="background-image: url(./assets/images/portfolio_1.png); background-size:cover;">
+                  <svg class="works__arrow">
+                    <use xlink:href="./assets/images/svg/symbols.svg#portf_arrow_down"></use>
+                  </svg>
+                </div>
+                <div class="arrow__up" style="background-image: url(./assets/images/portfolio_2.png); background-size:cover;">
+                  <svg class="works__arrow">
+                    <use xlink:href="./assets/images/svg/symbols.svg#portf_arrow_up"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="works__reviews" style="background-image: url(./assets/images/bg_works.png);">
+            <div class="works__title works_reviews_title">
+              <svg class="bg__title-img works_review_undertitle">
+                <use xlink:href="./assets/images/svg/symbols.svg#about_header"></use>
+              </svg><span class="auth__title works__review_title">что обо мне</span><span class="auth__title works__review_subtitle">говорят</span>
+            </div>
+            <div class="works__review">
+              <div class="works__review_first"><img class="people__review_img" src="./assets/images/quote.png" alt="123">
+                <p class="review__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+                <div class="review__people"><img class="people__avatar_img" src="./assets/images/avatar_kovalchuk.jpg" alt="">
+                  <div class="review__people_adv"><span class="people__name">Ковальчук Дмитрий</span><span class="people__job">основатель Loftschool</span></div>
+                </div>
+              </div>
+              <div class="works__review_first"><img class="people__review_img" src="./assets/images/quote.png" alt="">
+                <p class="review__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
+                <div class="review__people"><img class="people__avatar_img" src="./assets/images/avatar_sabantsev.jpg" alt="">
+                  <div class="review__people_adv"><span class="people__name">Сабанцев Владимир</span><span class="people__job">преподаватель   </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="works__feedback"><span class="auth__title">связаться со мной                             </span>
+              <form class="feedback__form" action="#">
+                <input class="works__form_text" type="text" placeholder="Имя">
+                <input class="works__form_text" type="text" placeholder="Email">
+                <textarea class="works__form_textarea" name="" cols="30" rows="10" placeholder="Ваше сообщение"></textarea>
+              </form>
+              <div class="list-wrapper works__wrapper">
+                <div class="url__list"><a class="url__item auth__url works__url" href="#">Отправить</a>
+                  <div class="welcome__separator"></div><a class="url__item auth__url works__url" href="#">Очистить</a>
+                </div>
+              </div>
+            </div>
+            <div class="arrow-down works__arrow_up">
+              <svg class="social__item ">
+                <use xlink:href="./assets/images/svg/symbols.svg#portf_arrow_up"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="works__footer">
+            <section class="footer2">
+              <div class="footer__menu">
+                <ul class="menu__items">
+                  <li class="menu__item"><a href="/index.html">Главная</a></li>
+                  <li class="menu__item"><a href="/about.html">Обо мне</a></li>
+                  <li class="menu__item"><a href="my-works.html">Мои работы</a></li>
+                  <li class="menu__item"><a href="blog.html">Блог</a></li>
+                </ul>
+                <ul class="footer__social_items">
+                  <li class="footer__social_item">
+                    <svg class="social__item footer__social_item">
+                      <use xlink:href="./assets/images/svg/symbols.svg#vk_round"></use>
+                    </svg>
+                  </li>
+                  <li class="footer__social_item">
+                    <svg class="social__item footer__social_item">
+                      <use xlink:href="./assets/images/svg/symbols.svg#github_round"></use>
+                    </svg>
+                  </li>
+                  <li class="footer__social_item">
+                    <svg class="social__item footer__social_item">
+                      <use xlink:href="./assets/images/svg/symbols.svg#in_round"></use>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__down-text">
+                <p>Я веб-разработчик из Челябинска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool</p>
+                <p>© Мищенко Михаил | создано с любовью в LoftSchool | 2017</p>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="my-works.html">Мои работы</a></li>
-      <li><a href="blog.html">Блог</a></li>
-    </ul>
   </body>
 </html>

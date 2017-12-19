@@ -1,5 +1,7 @@
 block variables
-
+mixin svg(classIco, name)
+    svg(class= classIco)
+        use(xlink:href='./assets/images/svg/symbols.svg#'+ name)
 doctype html
 html
     head
@@ -13,4 +15,4 @@ html
         script(src='/assets/scripts/bundle.js' defer)
     body
         block content
-        include common/menu.pug
+            //include common/footer.pug

@@ -1,0 +1,139 @@
+.blog__title {
+    font-size: 63px;
+    color: white;
+    margin-bottom: 0;
+}
+
+.blog__title_bg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -10%);
+}
+
+.blog__title_img {
+    width: 100%;
+    height: 200px;
+    fill: white;
+    fill-opacity: 0.1;
+}
+
+.triangle .left2 {
+    fill: white;
+}
+
+.triangle .right2 {
+    fill: white;
+}
+
+.section__blog {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.section__blog_left {
+    width: 500px;
+}
+
+.menu__blog_items {
+    list-style: none;
+    padding-left: 126px;
+}
+
+.menu__blog_item {}
+
+.menu__blog_item_active {
+    color: #00bfa5;
+}
+
+.menu__blog_container {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.menu__blog_item_active .menu__blog_container {
+    border-right: 4px solid #00bfa5;
+}
+
+.menu__blog_item .menu__blog_container .menu__blog_text {
+    color: black;
+}
+
+.menu__blog_item_active .menu__blog_container .menu__blog_text {
+    color: #00bfa5;
+}
+
+.menu__blog_text {
+    text-align: right;
+}
+
+.section__blog_right {
+    width: 980px;
+    padding-left: 50px;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 5px solid #f1f1f2;
+    margin-bottom: 64px;
+}
+
+.blog__article_title {
+    &:before {
+        display: none;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+.blog__date {
+    color: #00bfa5;
+}
+
+.blog__text {
+    font-weight: 300;
+    color: #455a64;
+    line-height: 30px;
+}
+
+.quote__cod {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: 70px;
+}
+
+.quote__cod_nums {
+    background-color: #e7e5e3;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 10px;
+    &>span {
+        color: #979797;
+        font-size: 14px;
+    }
+}
+
+.quote__cod_text {
+    background-color: #f5f2f0;
+    font-size: 14px;
+    &>p {
+        margin: 0;
+        padding: 0;
+    }
+}

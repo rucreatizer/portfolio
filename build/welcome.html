@@ -13,76 +13,78 @@
   <body>
     <div class="wrapper"><a class="auth" href="#">Авторизоваться</a>
       <div class="welcome-wrapper">
-        <div class="welcome-form"><img class="avatar" src="./assets/images/avatar.jpg">
-          <div class="my-name">Мищенко Михаил</div>
-          <div class="description">Личный сайт веб разработчика</div>
-          <div class="social-icons">
-            <svg class="social__item">
-              <use xlink:href="./assets/images/svg/symbols.svg#vk"></use>
-            </svg>
-            <svg class="social__item">
-              <use xlink:href="./assets/images/svg/symbols.svg#github"></use>
-            </svg>
-            <svg class="social__item">
-              <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="list-wrapper">
-          <div class="url__list"><a class="url__item" href="#">Мои работы</a>
-            <div class="welcome__separator"></div><a class="url__item" href="#">Обо мне</a>
-            <div class="welcome__separator"></div><a class="url__item" href="#">Блог</a>
-          </div>
-        </div>
-      </div>
-      <div class="welcome-wrapper">
-        <div class="auth__block"><span class="auth__title">Авторизуйтесь</span>
-          <form class="auth__form" action="#">
-            <label class="auth__login">
-              <div class="auth__login-img">
-                <svg class="social__item">
-                  <use xlink:href="./assets/images/svg/symbols.svg#login"></use>
-                </svg>
-              </div>
-              <input class="auth__login-input" type="text" placeholder="Логин">
-            </label>
-            <label class="auth__pass">
-              <div class="auth__login-img">
-                <svg class="social__item">
-                  <use xlink:href="./assets/images/svg/symbols.svg#password"></use>
-                </svg>
-              </div>
-              <input class="auth__pass-input" type="text" placeholder="Пароль">
-            </label>
-            <div class="auth__robot-check">
-              <label class="auth__text" for="people__check">
-                <input class="auth__people-input" id="people__check" type="checkbox" name="people__check">
-                <div class="auth__checkbox">
-                  <svg>
-                    <use xlink:href="./assets/images/svg/symbols.svg#check"></use>
-                  </svg>
-                </div><span class="auth__text-people">Я человек</span>
-              </label>
-            </div><span class="auth__text-people2">Вы точно не робот?</span>
-            <div class="auth__robot-radio">
-              <label class="auth__check" for="people_radio">
-                <input class="auth_people-yes" id="people_radio" type="radio" name="people_rad">
-                <div class="people__radio">
-                  <div class="people__radio_checked"></div>
-                </div><span class="auth__text-people">Да</span>
-              </label>
-              <label class="auth__check2" for="people_radio2">
-                <input class="auth_people-yes" id="people_radio2" type="radio" name="people_rad">
-                <div class="people__radio2">
-                  <div class="people__radio2_checked"></div>
-                </div><span class="auth__text-people">Не уверен</span>
-              </label>
+        <div class="welcome hid">
+          <div class="welcome-form"><img class="avatar" src="./assets/images/avatar.jpg">
+            <div class="my-name">Мищенко Михаил</div>
+            <div class="description">Личный сайт веб разработчика</div>
+            <div class="social-icons">
+              <svg class="social__item">
+                <use xlink:href="./assets/images/svg/symbols.svg#vk"></use>
+              </svg>
+              <svg class="social__item">
+                <use xlink:href="./assets/images/svg/symbols.svg#github"></use>
+              </svg>
+              <svg class="social__item">
+                <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
+              </svg>
             </div>
-          </form>
+          </div>
+          <div class="list-wrapper">
+            <div class="url__list"><a class="url__item" href="#">Мои работы</a>
+              <div class="welcome__separator"></div><a class="url__item" href="#">Обо мне</a>
+              <div class="welcome__separator"></div><a class="url__item" href="#">Блог</a>
+            </div>
+          </div>
         </div>
-        <div class="list-wrapper">
-          <div class="url__list"><a class="url__item auth__url" href="#">На главную</a>
-            <div class="welcome__separator"></div><a class="url__item auth__url" href="#">Войти</a>
+        <div class="welcome">
+          <div class="auth__block"><span class="auth__title">Авторизуйтесь</span>
+            <form class="auth__form" action="#">
+              <label class="auth__login">
+                <div class="auth__login-img">
+                  <svg class="social__item">
+                    <use xlink:href="./assets/images/svg/symbols.svg#login"></use>
+                  </svg>
+                </div>
+                <input class="auth__login-input" type="text" placeholder="Логин">
+              </label>
+              <label class="auth__pass">
+                <div class="auth__login-img">
+                  <svg class="social__item">
+                    <use xlink:href="./assets/images/svg/symbols.svg#password"></use>
+                  </svg>
+                </div>
+                <input class="auth__pass-input" type="text" placeholder="Пароль">
+              </label>
+              <div class="auth__robot-check">
+                <label class="auth__text" for="people__check">
+                  <input class="auth__people-input" id="people__check" type="checkbox" name="people__check">
+                  <div class="auth__checkbox">
+                    <svg>
+                      <use xlink:href="./assets/images/svg/symbols.svg#check"></use>
+                    </svg>
+                  </div><span class="auth__text-people">Я человек</span>
+                </label>
+              </div><span class="auth__text-people2">Вы точно не робот?</span>
+              <div class="auth__robot-radio">
+                <label class="auth__check" for="people_radio">
+                  <input class="auth_people-yes" id="people_radio" type="radio" name="people_rad">
+                  <div class="people__radio">
+                    <div class="people__radio_checked"></div>
+                  </div><span class="auth__text-people">Да</span>
+                </label>
+                <label class="auth__check2" for="people_radio2">
+                  <input class="auth_people-yes" id="people_radio2" type="radio" name="people_rad">
+                  <div class="people__radio2">
+                    <div class="people__radio2_checked"></div>
+                  </div><span class="auth__text-people">Не уверен</span>
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="list-wrapper">
+            <div class="url__list"><a class="url__item auth__url" href="#">На главную</a>
+              <div class="welcome__separator"></div><a class="url__item auth__url" href="#">Войти</a>
+            </div>
           </div>
         </div>
       </div><span class="copyright">© Мищенко Михаил | создано с любовью в LoftSchool | 2017</span>
