@@ -8,3 +8,9 @@
 1. clone this repo
 2. npm i
 3. gulp
+
+### Страницы проекта
+1. https://rucreatizer.github.io/portfolio/build/welcome.html
+2. https://rucreatizer.github.io/portfolio/build/about.html
+3. https://rucreatizer.github.io/portfolio/build/my-works.html
+4. https://rucreatizer.github.io/portfolio/build/blog.html
