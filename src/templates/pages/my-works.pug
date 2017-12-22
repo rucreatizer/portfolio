@@ -23,11 +23,11 @@ block content
                 +svg('social__item', 'arrow_down')
             .bg__title
                 +svg('bg__title-img', 'portfolio_header')
-
-        .section
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").triangle
                 polygon(points="0,0   0,86   500.8,86   500.8,75.5").left3
                 polygon(points="1000,0   1000,86   500,86   500,75.5").right3
+        .section
+
             .section__works
                 .works__title
                     span.auth__title.works__title мои работы
@@ -51,8 +51,8 @@ block content
                 .works__reviews(style="background-image: url(./assets/images/bg_works.png);")
                     .works__title.works_reviews_title
                         +svg('bg__title-img works_review_undertitle', 'about_header')                
-                        span.auth__title.works__review_title что обо мне
-                        span.auth__title.works__review_subtitle говорят
+                        span.auth__title.works__review_title что обо мне говорят
+                        //- span.auth__title.works__review_subtitle говорят
                     .works__review
                         .works__review_first
                             img(src="./assets/images/quote.png", alt="123").people__review_img
@@ -78,9 +78,12 @@ block content
                             textarea(name="", cols="30", rows="10" placeholder="Ваше сообщение").works__form_textarea
                         .list-wrapper.works__wrapper
                             .url__list
-                                a.url__item.auth__url.works__url(href="#") Отправить
-                                .welcome__separator
-                                a.url__item.auth__url.works__url(href="#") Очистить
+                                //- a.url__item.auth__url.works__url(href="#") Отправить
+                                //- .welcome__separator
+                                //- a.url__item.auth__url.works__url(href="#") Очистить
+
+                                button(type="submit").url__item.auth__url.works__url Отправить
+                                button(type="reset").url__item.auth__url.works__url Очистить
                     .arrow-down.works__arrow_up
                         +svg('social__item ', 'portf_arrow_up')
 

@@ -141,6 +141,15 @@
     top: -160px;
 }
 
+.triangle {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-160px);
+    height: 160px;
+    width: 100%;
+}
+
 .triangle .left {
     fill: #efeee9;
 }
@@ -410,4 +419,9 @@
     fill: #00bea4;
     width: 20px;
     height: 20px;
+}
+
+.contact__title {
+    color: #6a7a82;
+    font-style: normal;
 }

@@ -23,11 +23,11 @@ block content
                 +svg('social__item', 'arrow_down')
             .bg__title
                 +svg('bg__title-img', 'portfolio_header')
-
-        .section
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").triangle
                 polygon(points="0,0   0,86   500.8,86   500.8,75.5").left
                 polygon(points="1000,0   1000,86   500,86   500,75.5").right
+        .section
+
         .section__about
             .section__about_left
                 .section__about_title
@@ -119,14 +119,14 @@ block content
                 ul.contacts__list
                     li.contact__item
                         +svg('social__item contact__image', 'skype')
-                        span.contact__title creatizer.ru
+                        a(href="#").contact__title creatizer.ru
                     li.contact__item
                         +svg('social__item contact__image', 'envelope')
-                        span.contact__title info@creatizer.ru
+                        a(href="#").contact__title info@creatizer.ru
                     li.contact__item
                         +svg('social__item contact__image', 'phone')
-                        span.contact__title +7 351 777 1 757
+                        a(href="#").contact__title +7 351 777 1 757
                     li.contact__item
                         +svg('social__item contact__image', 'map_n')
-                        span.contact__title г. Челябинск, ул. Кудрявцева 38, оф. 3                                                                        
+                        address(href="#").contact__title г. Челябинск, ул. Кудрявцева 38, оф. 3                                                                        
             include ../common/footer.pug

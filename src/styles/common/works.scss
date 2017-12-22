@@ -165,6 +165,7 @@
     align-self: center;
     padding: 0;
     margin: 0;
+    width: 300px;
 }
 
 .works__review_subtitle {
@@ -207,6 +208,7 @@
     flex-direction: column;
     justify-content: flex-start;
     margin-right: 20px;
+    width: 50%;
 }
 
 .people__review_img {
@@ -292,6 +294,12 @@
 
 .works__url {
     border-bottom-right-radius: 5px;
+    outline: none;
+    border: 1px solid transparent;
+    &:nth-of-type(1) {
+        border-right: 1px solid white;
+    }
+    cursor: pointer;
 }
 
 .works__arrow_up {
