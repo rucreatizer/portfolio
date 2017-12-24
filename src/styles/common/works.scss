@@ -18,6 +18,12 @@
     padding: 0;
     margin: 0 auto 70px auto;
     color: black;
+    @include px1200 {
+        font-size: 63px;
+    }
+    @include px768 {
+        margin-bottom: 0;
+    }
 }
 
 .works__title_img {
@@ -28,21 +34,39 @@
     fill: #6d7070;
     fill-opacity: 0.07;
     transform: translate(-30%, -40%);
+    @include px1200 {
+        left: 70px;
+    }
 }
 
 .works {
     width: 100%;
+    height: 750px;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @include px1000 {
+        height: 700px;
+    }
+    @include px768 {
+        height: auto;
+    }
 }
 
 .works__descriptions {
     width: 50%;
-    //height: 500px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     background-color: #f0efe9;
+    @include px768 {
+        width: 100%;
+        height: 270px;
+        order: 2;
+    }
 }
 
 .works__title_description {
@@ -50,6 +74,9 @@
     margin: 0;
     padding: 0;
     margin: 0 auto 10px auto;
+    @include px768 {
+        display: none;
+    }
 }
 
 .works__subtitle_description {
@@ -63,10 +90,22 @@
     &:before {
         display: none;
     }
+    @include px768 {
+        margin-bottom: 10px;
+        display: none;
+    }
+}
+
+.works__title_description_oneline {
+    display: none;
+    @include px768 {
+        display: block;
+        margin-bottom: 20px;
+    }
 }
 
 .works__tech_text {
-    width: 420px;
+    width: 90%;
     border-top: 1px solid #00bfa5;
     border-bottom: 1px solid #00bfa5;
     padding: 19px 0;
@@ -75,6 +114,9 @@
     align-self: center;
     text-align: center;
     margin-bottom: 40px;
+    @include px768 {
+        width: 350px;
+    }
 }
 
 .works__button {
@@ -105,18 +147,38 @@
 .works__portfolio {
     width: 50%;
     background-color: #efebe0;
+    @include px768 {
+        width: 100%;
+    }
 }
 
 .works__image {
-    width: 100%;
-    height: 525px;
-    padding: 66px 155px 50px 140px;
+    width: 50%;
+    height: 70%;
+    //padding: 66px 155px 50px 140px;
+    display: flex;
+    @include px768 {
+        width: 100%;
+        order: 1;
+        height: 260px;
+    }
+}
+
+.works__image_pic {
+    width: 80%;
+    margin: auto;
 }
 
 .works__arrows {
-    height: 225px;
-    width: 100%;
+    height: 30%;
+    width: 50%;
     display: flex;
+    align-self: flex-end;
+    @include px768 {
+        order: 3;
+        width: 100%;
+        height: 215px;
+    }
 }
 
 .arrow__down,
@@ -166,6 +228,10 @@
     padding: 0;
     margin: 0;
     width: 300px;
+    @include px768 {
+        font-size: 35px;
+        width: 70%;
+    }
 }
 
 .works__review_subtitle {
@@ -192,15 +258,22 @@
     left: 50%;
     top: -10px;
     transform: translateX(-50%);
+    @include px768 {
+        width: 70%;
+    }
 }
-
-.works__reviews {}
 
 .works__review {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 720px;
+    @include px740 {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        width: 95%;
+    }
 }
 
 .works__review_first {
@@ -209,12 +282,18 @@
     justify-content: flex-start;
     margin-right: 20px;
     width: 50%;
+    @include px740 {
+        margin-bottom: 30px;
+    }
 }
 
 .people__review_img {
     opacity: 0.6;
     width: 33px;
     height: 29px;
+    @include px740 {
+        align-self: center;
+    }
 }
 
 .review__text {
@@ -258,11 +337,14 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    @include px740 {
+        width: 80%;
+    }
 }
 
 .works__feedback {
     width: 380px;
-    padding: 37px 22px 0 20px;
+    padding: 37px 0 0 0;
     background-image: url(../images/works_feedback_bg.jpg);
     // background-position: bottom center;
     // background-repeat: no-repeat;
@@ -273,6 +355,9 @@
     //background-color: red;
     //margin-bottom: 100px;
     border-radius: 5px;
+    @include px740 {
+        width: 70%;
+    }
 }
 
 .works__form_text {
@@ -282,6 +367,9 @@
     margin-bottom: 20px;
     padding: 14px 20px;
     font-size: 14px;
+    @include px740 {
+        width: 100%;
+    }
 }
 
 .works__form_textarea {
@@ -290,6 +378,9 @@
     margin-bottom: 20px;
     padding: 16px 20px;
     font-size: 14px;
+    @include px740 {
+        width: 100%;
+    }
 }
 
 .works__url {
@@ -302,6 +393,13 @@
     cursor: pointer;
 }
 
+.works__wrapper,
+.work__list {
+    @include px768 {
+        width: 100%;
+    }
+}
+
 .works__arrow_up {
     margin-top: 50px;
 }
@@ -309,4 +407,8 @@
 .works__footer {
     position: relative;
     display: block;
+}
+
+.works__feedback {
+    border-radius: 5px;
 }

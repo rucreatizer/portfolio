@@ -27,6 +27,9 @@
         background-color: white;
         color: #00bfa5;
     }
+    @include px768 {
+        transform: translate(-110%, 0);
+    }
 }
 
 .welcome-wrapper {
@@ -48,8 +51,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
+    @include px768 {
+        width: 347px;
+    }
 }
 
 .hid {
@@ -96,30 +101,22 @@
     }
 }
 
-// #vk>path {
-//     fill: #70d1c6;
-//     &:hover {
-//         fill: #00bfa5;
-//     }
-// }
-// #github>path {
-//     fill: #70d1c6;
-//     &:hover {
-//         fill: #00bfa5;
-//     }
-// }
-// #in>path {
-//     fill: #70d1c6;
-//     &:hover {
-//         fill: #00bfa5;
-//     }
-// }
+.social__item_header {
+    fill: #c1d6d6;
+    &:hover {
+        fill: white;
+    }
+}
+
 .list-wrapper {}
 
 .url__list {
     display: flex;
     justify-content: center;
     width: 380px;
+    @include px768 {
+        width: 347px;
+    }
 }
 
 .url__item {
@@ -155,12 +152,22 @@
     background-color: rgba(#dee3e7, 0.7);
 }
 
+.main__footer {
+    position: relative;
+    width: 100%;
+}
+
 .copyright {
     position: absolute;
     color: white;
     left: 50%;
     top: 100%;
+    width: 100%;
+    text-align: center;
     transform: translate(-50%, -300%);
+    @include px768 {
+        font-size: 14px;
+    }
 }
 
 .auth__block {

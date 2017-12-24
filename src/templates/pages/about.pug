@@ -11,9 +11,12 @@ block content
             .wrapper-header
                 .header
                     .social__list
-                        +svg('social__item social__item_about', 'vk')
-                        +svg('social__item social__item_about', 'github')
-                        +svg('social__item social__item_about', 'in')
+                        a(href="https://vk.com/mischenkomi" target="_blank")
+                            +svg('social__item social__item_header', 'vk')
+                        a(href="https://github.com/rucreatizer/" target="_blank")
+                            +svg('social__item social__item_header', 'github')
+                        a(href="https://www.instagram.com/spectender.ru/" target="_blank")
+                            +svg('social__item social__item_header', 'in')
                     .menu
             .info
                 img.avatar(src="./assets/images/avatar.jpg")

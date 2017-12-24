@@ -35,6 +35,9 @@
 
 .section__blog_left {
     width: 500px;
+    @include px1000 {
+        display: none;
+    }
 }
 
 .menu__blog_items {
@@ -76,6 +79,9 @@
 .section__blog_right {
     width: 980px;
     padding-left: 50px;
+    @include px1000 {
+        width: 95%;
+    }
 }
 
 .blog {
@@ -85,6 +91,9 @@
     align-items: flex-start;
     border-bottom: 5px solid #f1f1f2;
     margin-bottom: 64px;
+    &:nth-last-child(1) {
+        border-bottom: 5px solid transparent;
+    }
 }
 
 .blog__article_title {

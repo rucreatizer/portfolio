@@ -1,13 +1,67 @@
-extends ../template
-
+extends ../template_main
+mixin svg(classIco, name)
+	svg(class= classIco)
+		use(xlink:href='./assets/images/svg/symbols.svg#'+ name)
 block variables
-    - var title = 'Добро пожаловать'
+	- var title = 'Добро пожаловать'
 
 block content
-    h1 Главная
-    form
-        label(for="email") email
-        input(name="email" id="email")
-        label(for="password") password
-        input(name="password" id="password")
-        button Войти
+	.wrapper
+		a.auth(href="#") Авторизоваться
+		.welcome-wrapper
+			.welcome
+				.welcome-form
+					img.avatar(src="./assets/images/avatar.jpg")
+					.my-name Мищенко Михаил
+					.description Личный сайт веб разработчика
+					.social-icons
+						a(href="https://vk.com/mischenkomi" target="_blank")
+							+svg('social__item', 'vk')
+						a(href="https://github.com/rucreatizer/" target="_blank")
+							+svg('social__item', 'github')
+						a(href="https://www.instagram.com/spectender.ru/" target="_blank")
+							+svg('social__item', 'in')
+				.list-wrapper
+					.url__list
+						a.url__item(href="my-works.html") Мои работы
+						.welcome__separator
+						a.url__item(href="about.html") Обо мне
+						.welcome__separator
+						a.url__item(href="blog.html") Блог
+			.welcome.hid
+				.auth__block
+					span.auth__title Авторизуйтесь
+					form.auth__form(action="#")
+						label.auth__login
+							.auth__login-img
+								+svg('social__item', 'login')
+							input.auth__login-input(type="text" placeholder="Логин")
+						label.auth__pass
+							.auth__login-img
+								+svg('social__item', 'password')
+							input.auth__pass-input(type="text" placeholder="Пароль")
+						.auth__robot-check
+							label.auth__text(for="people__check")
+								input.auth__people-input(id="people__check" type="checkbox" name="people__check")
+								.auth__checkbox
+									+svg('', 'check')
+								span.auth__text-people Я человек
+						span.auth__text-people2 Вы точно не робот?
+						.auth__robot-radio
+							label.auth__check(for="people_radio")
+								input.auth_people-yes(id="people_radio" type="radio" name="people_rad")
+								.people__radio
+									.people__radio_checked
+								span.auth__text-people Да
+							label.auth__check2(for="people_radio2")
+								input.auth_people-yes(id="people_radio2" type="radio" name="people_rad")
+								.people__radio2
+									.people__radio2_checked
+								span.auth__text-people Не уверен
+				.list-wrapper
+					.url__list
+						a.url__item.auth__url(href="") На главную
+						.welcome__separator
+						a.url__item.auth__url(href="#") Войти
+		.main__footer
+			.copyright © Мищенко Михаил | создано с любовью в LoftSchool | 2017
