@@ -1,5 +1,30 @@
+body {
+    font-family: roboto;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+@import 'common/fonts';
 @import 'common/normalize';
 @import 'common/menu';
 @import 'common/technologies';
 @import 'common/slider';
 @import 'common/welcome';
+@import 'common/about';
+@import 'common/footer';
+@import 'common/blog';
+@import 'common/works';

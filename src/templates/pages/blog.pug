@@ -1,17 +1,65 @@
 extends ../template
-
+mixin svg(classIco, name)
+    svg(class= classIco)
+        use(xlink:href='./assets/images/svg/symbols.svg#'+ name)
 block variables
-    - var title = 'Блог'
+    - var title = 'Обо мне'
 
 block content
-    h1 Блог
-    ul
-        li
-            h2 Заголовок статьи
-            p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-        li
-            h2 Ещё статья
-            p Далеко-далеко за словесными горами в стране.
-        li
-            h2 Последняя статья
-            p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Курсивных то осталось за.
+    .wrapper.wrapper__about
+        .section.section__top
+            .wrapper-header
+                .header
+                    .social__list
+                        +svg('social__item social__item_about', 'vk')
+                        +svg('social__item social__item_about', 'github')
+                        +svg('social__item social__item_about', 'in')
+                    .menu
+            .info
+                img.avatar(src="./assets/images/avatar.jpg" alt="Аватарка")
+                .auth__title.blog__title БЛОГ
+                .description Статьи, которые я написал
+            .arrow-down
+                +svg('social__item', 'arrow_down')
+            .bg__title.blog__title_bg
+                +svg('bg__title-img blog__title_img', 'blog_header')
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").triangle
+                polygon(points="0,0   0,86   500.8,86   500.8,75.5").left2
+                polygon(points="1000,0   1000,86   500,86   500,75.5").right2
+
+        .section
+
+            .section__blog
+                .section__blog_left
+                    ul.menu__blog_items
+                        li.menu__blog_item
+                            .menu__blog_container
+                                a(href="#").menu__blog_text Самое важное в SASS                                
+                        li.menu__blog_item.menu__blog_item_active
+                            .menu__blog_container
+                                a(href="#").menu__blog_text Приёмы в вёрстке, без которых не обходится ни один сайт
+                        li.menu__blog_item
+                            .menu__blog_container
+                                a(href="#").menu__blog_text Самый необходимый набор Gulp плагинов
+                        li.menu__blog_item
+                            .menu__blog_container
+                                a(href="#").menu__blog_text Почему я выбрал Jade                                                            
+                .section__blog_right
+                    article.blog
+                        h1.auth__title.blog__article_title Самое важное в SASS
+                        time(datetime="2017-12-20" title="20.12.2017").blog__date 20.12.2017
+                        p.blog__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                        .quote__cod
+                            .quote__cod_nums
+                                span 1
+                                span 2
+                                span 3
+                                span 4
+                                span 5
+                            .quote__cod_text
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis aperiam explicabo officiis cupiditate. Fugiat incidunt minus eaque consectetur, aut aliquid excepturi maiores, repudiandae cupiditate quibusdam nulla, in odio. Explicabo, tenetur.
+                    article.blog
+                        h1.auth__title.blog__article_title Самое важное в SASS
+                        time(datetime="2017-12-20" title="20.12.2017").blog__date 20.12.2017
+                        p.blog__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.                            
+        include ../common/footer2.pug

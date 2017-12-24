@@ -1,8 +1,132 @@
 extends ../template
-
+mixin svg(classIco, name)
+    svg(class= classIco)
+        use(xlink:href='./assets/images/svg/symbols.svg#'+ name)
 block variables
     - var title = 'Обо мне'
 
 block content
-    h1 Обо мне
-    include ../common/technologies.pug
+    .wrapper.wrapper__about
+        .section.section__top
+            .wrapper-header
+                .header
+                    .social__list
+                        +svg('social__item social__item_about', 'vk')
+                        +svg('social__item social__item_about', 'github')
+                        +svg('social__item social__item_about', 'in')
+                    .menu
+            .info
+                img.avatar(src="./assets/images/avatar.jpg")
+                .my-name Мищенко Михаил
+                .description Личный сайт веб разработчика
+            .arrow-down
+                +svg('social__item', 'arrow_down')
+            .bg__title
+                +svg('bg__title-img', 'portfolio_header')
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").triangle
+                polygon(points="0,0   0,86   500.8,86   500.8,75.5").left
+                polygon(points="1000,0   1000,86   500,86   500,75.5").right
+        .section
+
+        .section__about
+            .section__about_left
+                .section__about_title
+                    span.auth__title.auth__title_about Обо мне
+                    +svg('section__about_title_img', 'about_header')
+                .section__about_more
+                    img(src="./assets/images/about_photo.jpg", alt="", srcset="").about__photo
+                    span.auth__title.auth__title_small Кто я
+                    p.auth__title_desc Я веб разработчик из Челябинска. Мне 33 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p.auth__title_desc Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .section__about_right
+                span.auth__title чем я могу быть
+                span.auth__title.auth__title_useme вам полезен
+                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+                .skills
+                    .skills__title Frontend
+                        ul.skills__list
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text HTML5
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text CSS3                            
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text JavaScript &amp; jQuery                            
+                    .skills__title Backend
+                        ul.skills__list
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text PHP                             
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text mySQL                              
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text Node.js &amp; npm                             
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text Mongo.db                              
+                    .skills__title WorkFlow
+                        ul.skills__list
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text Git                               
+                            li.skill__item
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text Gulp                               
+                            li.skill__item                   
+                                svg(viewBox='0 0 110 110').circles
+                                    circle(r="45" cx="50%" cy="50%" fill="none").circle__first 
+                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").circle__second.circle-15 
+                                span.skills__text Bower
+        .section__map
+            .map(id="map") 
+            script.
+                function initMap() {
+                    var uluru = {lat: -25.363, lng: 131.044};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 4,
+                    center: uluru
+                        });
+                    var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                        });
+                }
+            script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AKKh5WXT8En9jaGyoJGGY4qzBmPo8BE&callback=initMap") 
+            .map__info
+                span.auth__title.map__title контакты
+                ul.contacts__list
+                    li.contact__item
+                        +svg('social__item contact__image', 'skype')
+                        a(href="#").contact__title creatizer.ru
+                    li.contact__item
+                        +svg('social__item contact__image', 'envelope')
+                        a(href="#").contact__title info@creatizer.ru
+                    li.contact__item
+                        +svg('social__item contact__image', 'phone')
+                        a(href="#").contact__title +7 351 777 1 757
+                    li.contact__item
+                        +svg('social__item contact__image', 'map_n')
+                        address(href="#").contact__title г. Челябинск, ул. Кудрявцева 38, оф. 3                                                                        
+            include ../common/footer.pug

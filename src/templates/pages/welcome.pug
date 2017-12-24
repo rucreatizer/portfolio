@@ -1,25 +1,64 @@
 extends ../template_main
-
+mixin svg(classIco, name)
+	svg(class= classIco)
+		use(xlink:href='./assets/images/svg/symbols.svg#'+ name)
 block variables
 	- var title = 'Добро пожаловать'
 
 block content
-	div.wrapper
+	.wrapper
 		a.auth(href="#") Авторизоваться
-		div.welcome-wrapper
-			div.welcome-form
-				img.avatar(src="./assets/images/avatar.jpg")
-				div.my-name Мищенко Михаил
-				div.description Личный сайт веб разработчика
-				div.social-icons
-					img.social-icon(src="")
-					1
-					img.social-icon(src="")
-					2
-					img.social-icon(src="")
-					3
-				div.url__list
-					a.url__item(href="#") Мои работы
-					a.url__item(href="#") Обо мне
-					a.url__item(href="#") Блог
-		span.copyright © Мищенко Михаил | создано с любовью в LoftSchool | 2017
+		.welcome-wrapper
+			.welcome.hid
+				.welcome-form
+					img.avatar(src="./assets/images/avatar.jpg")
+					.my-name Мищенко Михаил
+					.description Личный сайт веб разработчика
+					.social-icons
+						+svg('social__item', 'vk')
+						+svg('social__item', 'github')
+						+svg('social__item', 'in')
+				.list-wrapper
+					.url__list
+						a.url__item(href="#") Мои работы
+						.welcome__separator
+						a.url__item(href="#") Обо мне
+						.welcome__separator
+						a.url__item(href="#") Блог
+			.welcome
+				.auth__block
+					span.auth__title Авторизуйтесь
+					form.auth__form(action="#")
+						label.auth__login
+							.auth__login-img
+								+svg('social__item', 'login')
+							input.auth__login-input(type="text" placeholder="Логин")
+						label.auth__pass
+							.auth__login-img
+								+svg('social__item', 'password')
+							input.auth__pass-input(type="text" placeholder="Пароль")
+						.auth__robot-check
+							label.auth__text(for="people__check")
+								input.auth__people-input(id="people__check" type="checkbox" name="people__check")
+								.auth__checkbox
+									+svg('', 'check')
+								span.auth__text-people Я человек
+						span.auth__text-people2 Вы точно не робот?
+						.auth__robot-radio
+							label.auth__check(for="people_radio")
+								input.auth_people-yes(id="people_radio" type="radio" name="people_rad")
+								.people__radio
+									.people__radio_checked
+								span.auth__text-people Да
+							label.auth__check2(for="people_radio2")
+								input.auth_people-yes(id="people_radio2" type="radio" name="people_rad")
+								.people__radio2
+									.people__radio2_checked
+								span.auth__text-people Не уверен
+				.list-wrapper
+					.url__list
+						a.url__item.auth__url(href="") На главную
+						.welcome__separator
+						a.url__item.auth__url(href="#") Войти
+		footer
+			span.copyright © Мищенко Михаил | создано с любовью в LoftSchool | 2017

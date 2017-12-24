@@ -1,8 +1,91 @@
 extends ../template
-
+mixin svg(classIco, name)
+    svg(class= classIco)
+        use(xlink:href='./assets/images/svg/symbols.svg#'+ name)
 block variables
-    - var title = 'Мои работы'
+    - var title = 'Обо мне'
 
 block content
-    h1 Мои работы
-    include ../common/slider.pug
+    .wrapper.wrapper__about
+        .section.section__top
+            .wrapper-header
+                .header
+                    .social__list
+                        +svg('social__item social__item_about', 'vk')
+                        +svg('social__item social__item_about', 'github')
+                        +svg('social__item social__item_about', 'in')
+                    .menu
+            .info
+                img.avatar(src="./assets/images/avatar.jpg")
+                .my-name Мищенко Михаил
+                .description Личный сайт веб разработчика
+            .arrow-down
+                +svg('social__item', 'arrow_down')
+            .bg__title
+                +svg('bg__title-img', 'portfolio_header')
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").triangle
+                polygon(points="0,0   0,86   500.8,86   500.8,75.5").left3
+                polygon(points="1000,0   1000,86   500,86   500,75.5").right3
+        .section
+
+            .section__works
+                .works__title
+                    span.auth__title.works__title мои работы
+                    +svg('bg__title-img works__title_img', 'works_header')
+                .works
+                    .works__descriptions
+                        span.auth__title.works__title_description сайт школы онлайн
+                        span.auth__title.works__subtitle_description образования
+                        span.works__tech_text html, css, javascript
+                        button.works__button
+                            +svg('works__button_img', 'link')
+                            span.works__button_text Посмотреть сайт
+                    .works__portfolio
+                        .works__image 
+                            img.works__image_pic(src="./assets/images/works_image.png", alt="")
+                        .works__arrows
+                            .arrow__down(style="background-image: url(./assets/images/portfolio_1.png); background-size:cover;")
+                                +svg('works__arrow', 'portf_arrow_down')
+                            .arrow__up(style="background-image: url(./assets/images/portfolio_2.png); background-size:cover;")
+                                +svg('works__arrow', 'portf_arrow_up')              
+                .works__reviews(style="background-image: url(./assets/images/bg_works.png);")
+                    .works__title.works_reviews_title
+                        +svg('bg__title-img works_review_undertitle', 'about_header')                
+                        span.auth__title.works__review_title что обо мне говорят
+                        //- span.auth__title.works__review_subtitle говорят
+                    .works__review
+                        .works__review_first
+                            img(src="./assets/images/quote.png", alt="123").people__review_img
+                            p.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .review__people
+                                img(src="./assets/images/avatar_kovalchuk.jpg", alt="").people__avatar_img
+                                .review__people_adv
+                                    span.people__name Ковальчук Дмитрий
+                                    span.people__job основатель Loftschool
+                        .works__review_first
+                            img(src="./assets/images/quote.png", alt="").people__review_img
+                            p.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            .review__people
+                                img(src="./assets/images/avatar_sabantsev.jpg", alt="").people__avatar_img
+                                .review__people_adv
+                                    span.people__name Сабанцев Владимир
+                                    span.people__job преподаватель   
+                    .works__feedback
+                        span.auth__title связаться со мной                             
+                        form.feedback__form(action="#")
+                            input(type="text" placeholder="Имя").works__form_text
+                            input(type="text" placeholder="Email").works__form_text
+                            textarea(name="", cols="30", rows="10" placeholder="Ваше сообщение").works__form_textarea
+                        .list-wrapper.works__wrapper
+                            .url__list
+                                //- a.url__item.auth__url.works__url(href="#") Отправить
+                                //- .welcome__separator
+                                //- a.url__item.auth__url.works__url(href="#") Очистить
+
+                                button(type="submit").url__item.auth__url.works__url Отправить
+                                button(type="reset").url__item.auth__url.works__url Очистить
+                    .arrow-down.works__arrow_up
+                        +svg('social__item ', 'portf_arrow_up')
+
+                .works__footer
+                    include ../common/footer2.pug
