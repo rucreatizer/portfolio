@@ -6,6 +6,7 @@ block variables
     - var title = 'Обо мне'
 
 block content
+    include ../common/mobile_menu.pug
     .wrapper.wrapper__about
         .section.section__top
             .wrapper-header
@@ -17,7 +18,7 @@ block content
                             +svg('social__item social__item_header', 'github')
                         a(href="https://www.instagram.com/spectender.ru/" target="_blank")
                             +svg('social__item social__item_header', 'in')
-                    .menu
+                    #burgermenu.menu
             .info
                 img.avatar(src="./assets/images/avatar.jpg")
                 .my-name Мищенко Михаил

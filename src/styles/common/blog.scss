@@ -34,7 +34,9 @@
 }
 
 .section__blog_left {
-    width: 500px;
+    position: relative;
+    width: 600px;
+    //padding-left: 126px;
     @include px1000 {
         display: none;
     }
@@ -43,6 +45,9 @@
 .menu__blog_items {
     list-style: none;
     padding-left: 126px;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .menu__blog_item {}
@@ -58,6 +63,7 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 20px;
+    border-right: 4px solid transparent;
 }
 
 .menu__blog_item_active .menu__blog_container {
@@ -145,4 +151,15 @@
         margin: 0;
         padding: 0;
     }
+}
+
+.menu__fixed {
+    position: fixed;
+    height: 1%;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    height: 0;
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="./assets/styles/app.min.css">
+    <script src="./assets/scripts/bundle.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js" defer>       </script>
+  </head>
+  <body>
+    <div class="admin__wrapper2">
+      <div class="admin__wrapper">
+        <header class="admin__header"><span class="admin__main_title">Панель администрирования</span><a class="back__site" href="index.html">Вернуться на сайт</a></header>
+        <div class="nav">
+          <ul class="nav__items">
+            <li class="nav__item" id="item1"><a class="nav__url" href="#">tab 1</a></li>
+            <li class="nav__item" id="item2"><a class="nav__url" href="#">tab 2</a></li>
+            <li class="nav__item" id="item3"><a class="nav__url" href="#">tab 3</a></li>
+            <li class="nav__item" id="item4"><a class="nav__url" href="#">tab 4</a></li>
+          </ul>
+        </div>
+        <section class="admin__pages">
+          <div class="admin__page1" id="page1">
+            <form class="admin__form" action="#" method="post" name="admin_form_about"><span class="admin__title">Страница "Обо мне"</span>
+              <div class="admin__about_techs">
+                <div class="admin__about_frontend"><span class="admin__about_title">Frontend</span>
+                  <ul class="admin__about_items">
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%   </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="admin__about_frontend"><span class="admin__about_title">Frontend</span>
+                  <ul class="admin__about_items">
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="admin__about_frontend"><span class="admin__about_title">Frontend</span>
+                  <ul class="admin__about_items">
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                    <li class="admin__about_item"><span class="admin__about_item_title">Html</span>
+                      <input class="admin_about_item_input" type="text" name="html"><span class="admin__about_item_percent">%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <input class="admin__button" type="submit" value="Сохранить">
+            </form>
+          </div>
+          <div class="admin__page_2 block__hidden" id="page2"><span class="admin__title">Страница "Блог"</span>
+            <form class="admin__form" action="#" method="post" name="admin_form_blog"><span class="admin__subtitle">Добавить запись</span>
+              <input class="admin_about_item_input admin_about_item_input_second" type="text" placeholder="Название" name="blog_title">
+              <input class="admin_about_item_input admin_about_item_input_second" type="date" placeholder="Дата" name="blog_date">
+              <textarea class="admin_about_item_textarea" placeholder="Содержание" name="blog_text"></textarea>
+              <input class="admin__button" type="submit" value="Добавить">
+            </form>
+          </div>
+          <div class="admin__page_3 block__hidden" id="page3"><span class="admin__title">Мои работы</span>
+            <form class="admin__form" ation="#" method="post" name="admin_form_works"><span class="admin__about_item_title">Добавить работу</span>
+              <input class="admin_about_item_input_second" type="text" placeholder="Название проекта" name="work_name">
+              <input class="admin_about_item_input_second" type="date" placeholder="Технологии" name="work_tech">
+              <label class="admin__file" for="work_img"><img class="admin_work_img" src="./assets/images/insert_image_admin.png" alt="">
+                <input type="file" name="work_img" id="work_img"><span class="admin__about_item_title admin__about_item_title_file">Загрузить картинку</span>
+              </label>
+              <input class="admin__button" type="submit" value="Добавить">
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

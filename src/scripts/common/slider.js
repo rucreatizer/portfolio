@@ -1,40 +1,279 @@
-const slides = document.querySelectorAll('#slides .slide');
-const next = document.getElementById('next');
-const previous = document.getElementById('previous');
-const controls = document.querySelectorAll('.controls');
+//-Анимация появляющегося текста слайдера
+var aviatitle = {
+	generate: function (string, block) {
+	  var wordsArray = string.split(' '),
+		stringArray = string.split(''),
+		sentence = [],
+		word = '';
+	  console.log(wordsArray);
+	  console.log(stringArray);
+	  block.text('');
+  
+	  wordsArray.forEach(function (currentWord) {
+		var wordsArray = currentWord.split('');
+  
+		wordsArray.forEach(function (letter) {
+		  var letterHtml = '<span class="letter-span">' + letter + '</span>';
+  
+		  word += letterHtml;
+		});
+  
+		var wordHTML = '<span class="letter-word">' + word + '</span>'
+  
+		sentence.push(wordHTML);
+		word = '';
+	  });
+  
+	  block.append(sentence.join(' '));
+  
+	  // анимация появления
+	  var
+		letters = block.find('.letter-span'), // найдем все наши буквы
+		duration = 500 / stringArray.length; // находим длительность для каждой буквы
+  
+	  $.each(letters, function (item, elem) {
+		setTimeout(function () {
+		  $(elem).addClass('active');
+		}, duration * item);
+	  });
+  
+	}
+  }
 
-let currentSlide = 0;
-
-// осуществляет переход к слайду номер n (начиная с 0)
-function goToSlide(n){
-    slides[currentSlide].className = 'slide';
-    currentSlide = (n+slides.length)%slides.length; // остаток от деления
-    slides[currentSlide].className = 'slide showing';
-}
-
-// навешивает обработчики событий на элементы next и previous
-function setupListners(){
-    next.onclick = function(){
-        goToSlide(currentSlide+1);
-    }
-    previous.onclick = function(){
-        goToSlide(currentSlide-1);
-    }
-}
-
-// показывает кнопки для навигации
-function showButtons(){
-    for(var i=0; i<controls.length; i++){
-        controls[i].style.display = 'inline-block';
-    }
-}
-
-// инициализация слайдера
-function sliderInit(){
-    if (slides.length !== 0){ // если на странице есть нужный html код
-        setupListners();
-        showButtons();
-    }
-}
-
-module.exports = sliderInit;
+//-Слайдер
+var Slider = function (container) {
+	var nextBtn = container.find('.slider__button-left'),// левая  кнопка
+	  prevBtn = container.find('.slider__button-right'), // правая кнопка
+	  items = nextBtn.find('.slider__button-item'), // слайды
+	  display = container.find('.slider__content'), // Витрина слайдера
+	  title = container.find('.slider__about-title-text'), // заголовок слайда
+	  skills = container.find('.slider__about-desc'), // технологии
+	  link = container.find('.slider__about-link'), // ссылка
+	  itemsLength = items.length, // количество слайдов
+	  duration = 500, 
+	  flag = true;
+  
+	// var timeout;
+  
+	this.counter = 0;
+  
+	// private Генерация разметки кнопки следующий слайд 
+	var generateMarkups = function () {        
+	  var list = nextBtn.find('.slider__button-list'),
+		markups = list.clone();
+  
+	  prevBtn
+		.append(markups);
+		// .find('.works-slider__control-item')
+		// .removeClass('active')
+		// .eq(this.counter + 1)
+		// .addClass('active');
+	}
+	// Вытащить данные из дата атрибутов для левой части слайдера
+	var getDataArrays = function () {
+	  var dataObject = {
+		pics: [],
+		title: [],
+		skills: [],
+		link: []
+	  };
+  
+	  $.each(items, function () {
+		var $this = $(this);
+  
+		dataObject
+		  .pics
+		  .push($this.data('full'));
+		dataObject
+		  .title
+		  .push($this.data('title'));
+		dataObject
+		  .skills
+		  .push($this.data('skills'));
+		dataObject
+		  .link
+		  .push($this.data('link'));
+	  });
+  
+	  return dataObject;
+	}
+  
+	var slideInLeftBtn = function (slide) {
+	  var reqItem = items.eq(slide - 1),
+		activeItem = items.filter('.active');
+  
+	  activeItem
+		.stop(true, true)
+		.animate({
+		  'top': '100%'
+		}, duration);
+  
+	  reqItem
+		.stop(true, true)
+		.animate({
+		  'top': '0%'
+		}, duration, function () {
+		  $(this)
+			.addClass('active')
+			.siblings()
+			.removeClass('active')
+			.css('top', '-100%')
+		});
+  
+	}
+  
+	var slideInRightBtn = function (slide) {
+	  var items = prevBtn.find('.slider__button-item'),
+		activeItem = items.filter('.active'),
+		reqSlide = slide + 1;
+  
+	  if (reqSlide > itemsLength - 1) {
+		reqSlide = 0;
+	  }
+  
+	  var reqItem = items.eq(reqSlide);
+  
+	  activeItem
+		.stop(true, true)
+		.animate({
+		  'top': '-100%'
+		}, duration);
+  
+	  reqItem
+		.stop(true, true)
+		.animate({
+		  'top': '0%'
+		}, duration, function () {
+		  $(this)
+			.addClass('active')
+			.siblings()
+			.removeClass('active')
+			.css('top', '100%')
+		});
+	};
+  
+	var changeMainPicture = function (slide) {
+	  var image = display.find('.slider__img');
+	  var data = getDataArrays();
+  
+	  image
+		.stop(true, true)
+		.fadeOut(duration / 2, function () {
+		  image.attr('src', data.pics[slide]);
+		  $(this).fadeIn(duration / 2);
+		});
+	}
+  
+	var changeTextData = function (slide) {
+	  var data = getDataArrays();
+  
+	  // название работы
+	  aviatitle.generate(data.title[slide], title, 'ru');
+  
+	  // описание технологий
+	  aviatitle.generate(data.skills[slide], skills, 'en');
+  
+	  // ссылка
+	  link.attr('href', data.link[slide]);
+	}
+  
+	// public
+	this.setDefaults = function () {
+	  var _that = this,
+		data = getDataArrays();
+	  console.log(data);
+	  // создаем разметку
+	  generateMarkups(); 
+  
+	  // левая кнопка
+	  nextBtn
+		.find('.slider__button-item')
+		.eq(_that.counter - 1)
+		.addClass('active');
+  
+	  // правая кнопка
+	  prevBtn
+		.find('.slider__button-item')
+		.eq(_that.counter + 1)
+		.addClass('active');
+  
+	  // основное изображение
+	  display
+		.find('.slider__img')
+		.attr('src', data.pics[_that.counter]);
+  
+	  // текстовые описания
+	  changeTextData(_that.counter);
+  
+	};
+  
+	this.moveSlide = function (direction) {
+	  var _that = this;
+	  // if (direction === "next") {
+	  //   if (_that.counter < itemsLength - 1) {
+	  //     _that.counter++;
+	  //   } else {
+	  //     _that.counter = 0;
+	  //   }
+	  // } else {
+	  //   if (_that.counter > 0) {
+	  //     _that.counter--;
+	  //   } else {
+	  //     _that.counter = itemsLength - 1;
+	  //   }
+	  // }
+  
+	  var directions = {
+		next: function () {
+		  // закольцовывание слайдера
+		  if (_that.counter < itemsLength - 1) {
+			_that.counter++;
+		  } else {
+			_that.counter = 0;
+		  }
+		},
+  
+		prev: function () {
+		  if (_that.counter > 0) {
+			_that.counter--;
+		  } else {
+			_that.counter = itemsLength - 1;
+		  }
+		}
+	  };
+  
+	  directions[direction]();
+  
+	  if (flag) {
+		flag = false;
+  
+		if (typeof timeout != 'undefined') {
+		  clearTimeout(timeout);
+		}
+  
+		timeout = setTimeout(function () {
+		  flag = true;
+		}, duration + 50);
+  
+		slideInLeftBtn(_that.counter);
+		slideInRightBtn(_that.counter);
+		changeMainPicture(_that.counter);
+		changeTextData(_that.counter);
+	  }
+	};
+  };
+  
+  var slider = new Slider($('.works'));
+  slider.setDefaults();
+  
+  $('.slider__button-left').on('click', function (e) {
+	e.preventDefault();
+	slider.moveSlide('prev');
+  });
+  
+  $('.slider__button-right').on('click', function (e) {
+	e.preventDefault();
+	slider.moveSlide('next');
+  });
+  
+  console.dir(slider);

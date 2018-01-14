@@ -9,8 +9,19 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
     <script src="./assets/scripts/bundle.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js" defer></script>
   </head>
   <body>
+    <div class="mobile-menu mobile-menu__hidden" id="mobile-menu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a class="mobile-menu__url mobile-menu__title" href="./my-works.html">мои работы</a></li>
+        <li class="mobile-menu__item">  <a class="mobile-menu__url mobile-menu__title" href="./blog.html">блог</a></li>
+        <li class="mobile-menu__item">   <a class="mobile-menu__url mobile-menu__title" href="./about.html">обо мне</a></li>
+        <li class="mobile-menu__item">   <a class="mobile-menu__url mobile-menu__title" href="./index.html">авторизация</a></li>
+      </ul>
+      <div class="close-mobile-menu" id="close-mobile-menu"></div>
+    </div>
     <div class="wrapper wrapper__about">
       <div class="section section__top">
         <div class="wrapper-header">
@@ -25,7 +36,7 @@
                 <svg class="social__item social__item_header">
                   <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
                 </svg></a></div>
-            <div class="menu"></div>
+            <div class="menu" id="burgermenu"></div>
           </div>
         </div>
         <div class="info"><img class="avatar" src="./assets/images/avatar.jpg">

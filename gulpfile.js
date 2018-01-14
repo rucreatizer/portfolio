@@ -70,7 +70,8 @@ function templates() {
 // scss
 function styles() {
     return gulp.src('./src/styles/app.scss')
-        .pipe(sourcemaps.init())
+    .pipe(plumber())    
+    .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: '.min' }))

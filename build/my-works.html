@@ -9,8 +9,19 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
     <script src="./assets/scripts/bundle.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js" defer></script>
   </head>
   <body>
+    <div class="mobile-menu mobile-menu__hidden" id="mobile-menu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a class="mobile-menu__url mobile-menu__title" href="./my-works.html">мои работы</a></li>
+        <li class="mobile-menu__item">  <a class="mobile-menu__url mobile-menu__title" href="./blog.html">блог</a></li>
+        <li class="mobile-menu__item">   <a class="mobile-menu__url mobile-menu__title" href="./about.html">обо мне</a></li>
+        <li class="mobile-menu__item">   <a class="mobile-menu__url mobile-menu__title" href="./index.html">авторизация</a></li>
+      </ul>
+      <div class="close-mobile-menu" id="close-mobile-menu"></div>
+    </div>
     <div class="wrapper wrapper__about">
       <div class="section section__top">
         <div class="wrapper-header">
@@ -25,7 +36,7 @@
                 <svg class="social__item social__item_header">
                   <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
                 </svg></a></div>
-            <div class="menu"></div>
+            <div class="menu" id="burgermenu"></div>
           </div>
         </div>
         <div class="info"><img class="avatar" src="./assets/images/avatar.jpg">
@@ -55,28 +66,29 @@
             </svg>
           </div>
           <div class="works">
-            <div class="works__descriptions"><span class="auth__title works__title_description">сайт школы онлайн</span><span class="auth__title works__subtitle_description">образования</span><span class="auth__title works__title_description works__title_description_oneline">сайт школы онлайн образования</span><span class="works__tech_text">html, css, javascript</span>
-              <button class="works__button">
-                <svg class="works__button_img">
-                  <use xlink:href="./assets/images/svg/symbols.svg#link"></use>
-                </svg><span class="works__button_text">Посмотреть сайт</span>
-              </button>
+            <div class="slider"></div>
+            <div class="slider__about">
+              <div class="slider__about-title">    </div>
+              <div class="subtitle subtitle_slider">
+                <div class="slider__about-title-text">      </div>
+              </div>
+              <div class="slider__about-desc"> </div><a class="slider__about-link" href="#" target="_blank"></a>
+              <svg class="slider__about-link-img"> 
+                <use xlink:href="./assets/img/sprite.svg#link"></use>
+              </svg>
+              <div class="slider__about-link-text">Посмотреть сайт</div>
             </div>
-            <div class="works__image"> <img class="works__image_pic" src="./assets/images/works_image.png" alt="Текущая работа в портфолио"></div>
-            <div class="works__arrows">
-              <div class="arrow__down" style="background-image: url(./assets/images/portfolio_1.png); background-size: cover;">
-                <svg class="works__arrow">
-                  <use xlink:href="./assets/images/svg/symbols.svg#portf_arrow_down"></use>
-                </svg>
-              </div>
-              <div class="arrow__up" style="background-image: url(./assets/images/portfolio_2.png); background-size: cover;">
-                <svg class="works__arrow">
-                  <use xlink:href="./assets/images/svg/symbols.svg#portf_arrow_up"></use>
-                </svg>
-              </div>
+            <div class="slider__content"><img class="slider__img" src=""></div>
+            <div class="slider__controls"><a class="slider__button-left" href="#"></a>
+              <ul class="slider__button-list">
+                <li class="slider__button-item" data-full="./assets/images/1.png" data-title="Агентсво интернет решений &quot;ITLoft&quot;" data-skills="node" data-link="http://itloft.ru/"></li><img class="slider__button-img" src="./assets/images/1.png">
+                <li class="slider__button-item" data-full="./assets/images/2.png" data-title="Школа онлай-образования &quot;LoftSchool&quot;" data-skills="html5, CSS3, javascript, php" data-link="http://loftschool.com/"></li><img class="slider__button-img" src="./assets/images/2.png">
+                <li class="slider__button-item" data-full="./assets/images/3.png" data-title="Портал обучающих уроков &quot;LoftBlog&quot;" data-skills="Ruby on Rails, javascript, RESTful" data-link="http://loftblog.ru/"></li><img class="slider__button-img" src="./assets/images/3.png">
+                <li class="slider__button-item" data-full="./assets/images/4.png" data-title="Сайт &quot;Атма йога&quot;" data-skills="UX, design, seo" data-link="http://atmayoga.ru/"></li><img class="slider__button-img" src="./assets/images/4.png">
+              </ul><a class="slider__button-right" href="#">     </a>
             </div>
           </div>
-          <div class="works__reviews" style="background-image: url(./assets/images/bg_works.png);">
+          <div class="works__reviews">
             <div class="works__title works_reviews_title">
               <svg class="bg__title-img works_review_undertitle">
                 <use xlink:href="./assets/images/svg/symbols.svg#about_header"></use>
@@ -96,7 +108,9 @@
                 </div>
               </div>
             </div>
-            <div class="works__feedback"><span class="auth__title">связаться со мной                             </span>
+            <div class="blur__back"><img src="./assets/images/bg_works.png" alt=""></div>
+            <div class="works__feedback">
+              <div class="blur blur__feedback" id="blur"></div><span class="auth__title">связаться со мной                             </span>
               <form class="feedback__form" action="#">
                 <input class="works__form_text" type="text" placeholder="Имя">
                 <input class="works__form_text" type="text" placeholder="Email">

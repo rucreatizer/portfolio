@@ -1,0 +1,99 @@
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        link(rel='stylesheet' href='./assets/styles/app.min.css')
+        script(src='./assets/scripts/bundle.js' defer)
+        script(src="https://code.jquery.com/jquery-2.1.4.min.js" defer)
+        script(src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js" defer)        
+    body
+        .admin__wrapper2
+            .admin__wrapper
+                header.admin__header
+                    span.admin__main_title Панель администрирования
+                    a(href="index.html").back__site Вернуться на сайт
+                .nav
+                    ul.nav__items
+                        li.nav__item#item1
+                            a(href="#").nav__url tab 1
+                        li.nav__item#item2
+                            a(href="#").nav__url tab 2
+                        li.nav__item#item3
+                            a(href="#").nav__url tab 3
+                        li.nav__item#item4
+                            a(href="#").nav__url tab 4
+                section.admin__pages
+                    #page1.admin__page1
+                        form(action="#" method="post" name="admin_form_about").admin__form
+                            span.admin__title Страница "Обо мне"
+                            .admin__about_techs
+                                .admin__about_frontend
+                                    span.admin__about_title Frontend
+                                    ul.admin__about_items
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %   
+                                .admin__about_frontend
+                                    span.admin__about_title Frontend
+                                    ul.admin__about_items
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                .admin__about_frontend
+                                    span.admin__about_title Frontend
+                                    ul.admin__about_items
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                                        li.admin__about_item
+                                            span.admin__about_item_title Html
+                                            input(type="text" name="html").admin_about_item_input
+                                            span.admin__about_item_percent %
+                            input(type="submit" value="Сохранить").admin__button
+                    #page2.admin__page_2.block__hidden
+                        span.admin__title Страница "Блог"
+                        form(action="#" method="post" name="admin_form_blog").admin__form
+                            span.admin__subtitle Добавить запись
+                            input(type="text" placeholder="Название" name="blog_title").admin_about_item_input.admin_about_item_input_second
+                            input(type="date" placeholder="Дата" name="blog_date").admin_about_item_input.admin_about_item_input_second
+                            textarea( placeholder="Содержание" name="blog_text").admin_about_item_textarea
+                            input(type="submit" value="Добавить").admin__button
+                    #page3.admin__page_3.block__hidden
+                        span.admin__title Мои работы
+                        form(ation="#" method="post" name="admin_form_works").admin__form
+                            span.admin__about_item_title Добавить работу
+                            input(type="text" placeholder="Название проекта" name="work_name").admin_about_item_input_second
+                            input(type="date" placeholder="Технологии" name="work_tech").admin_about_item_input_second
+                            label(for="work_img").admin__file
+                                img(src="./assets/images/insert_image_admin.png", alt="").admin_work_img
+                                input(type="file" name="work_img" id="work_img")
+                                span.admin__about_item_title.admin__about_item_title_file Загрузить картинку
+                            input(type="submit" value="Добавить").admin__button
