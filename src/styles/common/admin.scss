@@ -1,0 +1,205 @@
+.admin__wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(white, 0.6);
+}
+
+.admin__wrapper2 {
+    width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    background: url(../images/welcome_bg.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.block__hidden {
+    display: none;
+}
+
+.admin__header {
+    width: 100%;
+    height: auto;
+    background-color: #00bfa5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    @include px1000 {
+        flex-direction: column-reverse;
+        height: auto;
+        justify-content: space-around;
+        padding: 10px 10px;
+    }
+}
+
+.admin__main_title {
+    color: white;
+    font-size: 30px;
+    @include px768 {
+        text-align: center;
+    }
+    @include px740 {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+.back__site {
+    color: white;
+    font-size: 16px;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.nav__items {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    @include px768 {
+        flex-direction: column;
+    }
+}
+
+.nav__item {
+    position: relative;
+    padding: 20px 60px;
+    background-color: #f0efe9;
+    border-right: 2px solid white;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+    }
+    &:nth-last-of-type(1) {
+        border-right: 2px solid transparent;
+    }
+    @include px768 {
+        text-align: center;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid white;
+        &:nth-last-of-type(1) {
+            border-bottom: 2px solid transparent;
+        }
+    }
+}
+
+.nav__url {
+    color: black;
+    &:hover {
+        color: #00bfa5;
+    }
+}
+
+.admin__pages {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.admin__title {
+    font-size: 18px;
+}
+
+.admin__about_techs {
+    margin-top: 30px;
+    //display: flex;
+}
+
+.admin__about_items {
+    margin-left: 20px;
+    list-style: none;
+}
+
+.admin__about_item_title {
+    padding-right: 60px;
+}
+
+.admin__about_item {
+    margin-top: 10px;
+}
+
+.admin_about_item_input {
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 12px;
+    text-align: center;
+    @include px320 {
+        width: 80%;
+    }
+}
+
+.admin__about_item_percent {
+    padding-left: 10px;
+}
+
+.admin__button {
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #00bfa5;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.admin__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.admin__subtitle {
+    padding: 40px 0;
+}
+
+.admin_about_item_input_second {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    @include px740 {
+        width: 95%;
+    }
+}
+
+.admin_about_item_textarea {
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    @include px740 {
+        width: 95%;
+    }
+}
+
+.admin__form {
+    margin-top: 30px;
+}
+
+.admin__file {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    &>input {
+        display: none;
+    }
+}
+
+.admin__about_item_title_file {
+    padding-left: 20px;
+    color: #00bfa5;
+    cursor: pointer;
+}

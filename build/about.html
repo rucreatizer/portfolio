@@ -9,24 +9,34 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
     <script src="./assets/scripts/bundle.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js" defer></script>
   </head>
   <body>
+    <div class="mobile-menu mobile-menu__hidden" id="mobile-menu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a class="mobile-menu__url mobile-menu__title" href="./my-works.html">мои работы</a></li>
+        <li class="mobile-menu__item">  <a class="mobile-menu__url mobile-menu__title" href="./blog.html">блог</a></li>
+        <li class="mobile-menu__item">   <a class="mobile-menu__url mobile-menu__title" href="./about.html">обо мне</a></li>
+        <li class="mobile-menu__item">   <a class="mobile-menu__url mobile-menu__title" href="./index.html">авторизация</a></li>
+      </ul>
+      <div class="close-mobile-menu" id="close-mobile-menu"></div>
+    </div>
     <div class="wrapper wrapper__about">
       <div class="section section__top">
         <div class="wrapper-header">
           <div class="header">
-            <div class="social__list">
-              <svg class="social__item social__item_about">
-                <use xlink:href="./assets/images/svg/symbols.svg#vk"></use>
-              </svg>
-              <svg class="social__item social__item_about">
-                <use xlink:href="./assets/images/svg/symbols.svg#github"></use>
-              </svg>
-              <svg class="social__item social__item_about">
-                <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
-              </svg>
-            </div>
-            <div class="menu"></div>
+            <div class="social__list"><a href="https://vk.com/mischenkomi" target="_blank">
+                <svg class="social__item social__item_header">
+                  <use xlink:href="./assets/images/svg/symbols.svg#vk"></use>
+                </svg></a><a href="https://github.com/rucreatizer/" target="_blank">
+                <svg class="social__item social__item_header">
+                  <use xlink:href="./assets/images/svg/symbols.svg#github"></use>
+                </svg></a><a href="https://www.instagram.com/spectender.ru/" target="_blank">
+                <svg class="social__item social__item_header">
+                  <use xlink:href="./assets/images/svg/symbols.svg#in"></use>
+                </svg></a></div>
+            <div class="menu" id="burgermenu"></div>
           </div>
         </div>
         <div class="info"><img class="avatar" src="./assets/images/avatar.jpg">
@@ -183,27 +193,24 @@
         <section class="footer">
           <div class="footer__menu">
             <ul class="menu__items">
-              <li class="menu__item"><a href="/welcome.html">Главная</a></li>
-              <li class="menu__item"><a href="/about.html">Обо мне</a></li>
-              <li class="menu__item"><a href="my-works.html">Мои работы</a></li>
-              <li class="menu__item"><a href="blog.html">Блог</a></li>
+              <li class="menu__item"><a href="./index.html">Главная</a></li>
+              <li class="menu__item"><a href="./about.html">Обо мне</a></li>
+              <li class="menu__item"><a href="./my-works.html">Мои работы</a></li>
+              <li class="menu__item"><a href="./blog.html">Блог</a></li>
             </ul>
             <ul class="footer__social_items">
-              <li class="footer__social_item">
-                <svg class="social__item footer__social_item">
-                  <use xlink:href="./assets/images/svg/symbols.svg#vk_round"></use>
-                </svg>
-              </li>
-              <li class="footer__social_item">
-                <svg class="social__item footer__social_item">
-                  <use xlink:href="./assets/images/svg/symbols.svg#github_round"></use>
-                </svg>
-              </li>
-              <li class="footer__social_item">
-                <svg class="social__item footer__social_item">
-                  <use xlink:href="./assets/images/svg/symbols.svg#in_round"></use>
-                </svg>
-              </li>
+              <li class="footer__social_item"><a href="https://vk.com/mischenkomi" target="_blank">
+                  <svg class="social__item footer__social_item">
+                    <use xlink:href="./assets/images/svg/symbols.svg#vk_round"></use>
+                  </svg></a></li>
+              <li class="footer__social_item"><a href="https://github.com/rucreatizer/" target="_blank">
+                  <svg class="social__item footer__social_item">
+                    <use xlink:href="./assets/images/svg/symbols.svg#github_round"></use>
+                  </svg></a></li>
+              <li class="footer__social_item"><a href="https://www.instagram.com/spectender.ru/" target="_blank">
+                  <svg class="social__item footer__social_item">
+                    <use xlink:href="./assets/images/svg/symbols.svg#in_round"></use>
+                  </svg></a></li>
             </ul>
           </div>
           <div class="footer__down-text">
